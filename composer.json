@@ -1,5 +1,5 @@
 {
-    "name": "typo3/neos-base-distribution",
+    "name": "sfi/ermolaev-distr",
     "description": "Ermolaev.co distribution",
     "license": "GPL-3.0+",
     "config": {
@@ -24,7 +24,7 @@
         "typo3/party": "2.3.x-dev",
         "typo3/kickstart": "2.3.x-dev",
 
-        "sfi/grid": "dev-master",
+        "sfi/grid": "@dev",
         "sfi/shared": "dev-ermolaev"
     },
     "require-dev": {

@@ -1,0 +1,45 @@
+{
+    "name": "typo3/neos-base-distribution",
+    "description": "Ermolaev.co distribution",
+    "license": "GPL-3.0+",
+    "config": {
+        "vendor-dir": "Packages/Libraries",
+        "bin-dir": "bin"
+    },
+    "repositories": [
+        { "type": "git", "url": "https://github.com/sfi-ru/Sfi.Shared.git" },
+        { "type": "git", "url": "https://github.com/sfi-ru/Sfi.Grid.git" }
+    ],
+    "require": {
+        "typo3/neos": "1.2.x-dev",
+        "typo3/neos-nodetypes": "1.2.x-dev",
+        "typo3/neos-kickstarter": "1.2.x-dev",
+        "doctrine/migrations": "1.0.0-alpha3",
+        "typo3/typo3cr": "1.2.x-dev",
+        "typo3/typoscript": "1.2.x-dev",
+        "typo3/media": "1.2.x-dev",
+        "typo3/flow": "2.3.x-dev",
+        "typo3/fluid": "2.3.x-dev",
+        "typo3/eel": "2.3.x-dev",
+        "typo3/party": "2.3.x-dev",
+        "typo3/kickstart": "2.3.x-dev",
+
+        "sfi/grid": "dev-master",
+        "sfi/shared": "dev-ermolaev"
+    },
+    "require-dev": {
+        "typo3/buildessentials": "2.3.*",
+        "mikey179/vfsstream": "1.5.*",
+        "phpunit/phpunit": "4.6.*",
+        "flowpack/behat": "dev-master"
+    },
+    "suggest": {
+        "ext-pdo_sqlite": "For running functional tests out-of-the-box this is required"
+    },
+    "scripts": {
+        "post-update-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-install-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-package-update": "TYPO3\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+        "post-package-install": "TYPO3\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
+    }
+}

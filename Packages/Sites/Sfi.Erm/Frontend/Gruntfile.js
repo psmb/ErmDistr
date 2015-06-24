@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 		watch: {
 			compass: {
 				files: "scss/**/*.scss",
-				tasks: ['compass:watch'],
+				tasks: ['compass:dist'],
 			},
 		},
 		bower_concat: {
@@ -16,22 +16,10 @@ module.exports = function (grunt) {
 			}
 		},
 		compass: {
-			watch: {
+			dist: {
 				options: {
-					watch: true,
 					environment: 'development',
 					config: "config.rb"
-				}
-			}
-		},
-		browserSync: {
-			dev: {
-				bsFiles: {
-					src : 'Public/Built/app.css'
-				},
-				options: {
-					proxy: "ermolaev.co",
-					watchTask: true
 				}
 			}
 		}
@@ -44,5 +32,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-browser-sync');
 
 	// create custom task-list
-	grunt.registerTask('default', ["browserSync", "compass"]);
+	grunt.registerTask('default', ["watch"]);
 };

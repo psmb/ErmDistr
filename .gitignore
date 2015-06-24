@@ -5,6 +5,9 @@
 .sass-cache
 bower_components
 node_modules
+/Packages/Sites/Sfi.Erm/Frontend/bin
+/Packages/Sites/Sfi.Erm/Frontend/bundle
+/Packages/Sites/Sfi.Erm/Frontend/.bundle
 *.DS_Store
 
 /Web/_Resources/
@@ -35,3 +38,4 @@ Configuration/Development/Settings.yaml
 /Upgrading.txt
 /flow
 /flow.bat
+

@@ -24,8 +24,8 @@
         "typo3/party": "2.3.x-dev",
         "typo3/kickstart": "2.3.x-dev",
 
-        "sfi/grid": "@dev",
-        "sfi/shared": "@dev"
+        "sfi/grid": "dev-ermolaev",
+        "sfi/shared": "dev-ermolaev"
     },
     "require-dev": {
         "typo3/buildessentials": "2.3.*",

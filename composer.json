@@ -7,25 +7,35 @@
         "bin-dir": "bin"
     },
     "repositories": [
+        { "type": "git", "url": "https://github.com/sfi-ru/Sfi.Styleguide.git" },
         { "type": "git", "url": "https://github.com/sfi-ru/Sfi.Shared.git" },
         { "type": "git", "url": "https://github.com/sfi-ru/Sfi.Grid.git" }
     ],
     "require": {
-        "typo3/neos": "1.2.x-dev",
-        "typo3/neos-nodetypes": "1.2.x-dev",
-        "typo3/neos-kickstarter": "1.2.x-dev",
-        "doctrine/migrations": "1.0.0-alpha3",
-        "typo3/typo3cr": "1.2.x-dev",
-        "typo3/typoscript": "1.2.x-dev",
-        "typo3/media": "1.2.x-dev",
-        "typo3/flow": "2.3.x-dev",
-        "typo3/fluid": "2.3.x-dev",
-        "typo3/eel": "2.3.x-dev",
-        "typo3/party": "2.3.x-dev",
-        "typo3/kickstart": "2.3.x-dev",
+        "typo3/neos": "2.0.x-dev",
+        "typo3/neos-nodetypes": "2.0.x-dev",
+        "typo3/neos-kickstarter": "2.0.x-dev",
 
-        "sfi/grid": "dev-ermolaev",
-        "sfi/shared": "dev-ermolaev"
+        "doctrine/migrations": "@dev",
+
+        "typo3/neos-seo": "~1.0",
+        "typo3/imagine": "~2.0",
+        "typo3/form": "~2.0",
+        "typo3/setup": "~2.0",
+
+        "typo3/typo3cr": "2.0.x-dev",
+        "typo3/typoscript": "2.0.x-dev",
+        "typo3/media": "2.0.x-dev",
+
+        "typo3/flow": "3.0.*@beta",
+        "typo3/fluid": "3.0.*@beta",
+        "typo3/eel": "3.0.*@beta",
+        "typo3/party": "3.0.*@beta",
+        "typo3/kickstart": "3.0.*@beta",
+
+        "sfi/styleguide": "@dev",
+        "sfi/grid": "@dev",
+        "sfi/shared": "@dev"
     },
     "require-dev": {
         "typo3/buildessentials": "2.3.*",

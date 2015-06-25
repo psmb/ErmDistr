@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 		watch: {
 			compass: {
 				files: "scss/**/*.scss",
-				tasks: ['compass:dist'],
+				tasks: ['compass:compile'],
 			},
 		},
 		bower_concat: {
@@ -16,10 +16,10 @@ module.exports = function (grunt) {
 			}
 		},
 		compass: {
-			dist: {
+			compile: {
 				options: {
-					environment: 'development',
-					config: "config.rb"
+					environment: 'production',
+					config: 'config.rb'
 				}
 			}
 		}
@@ -29,8 +29,8 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-bower-concat');
-	grunt.loadNpmTasks('grunt-browser-sync');
 
 	// create custom task-list
 	grunt.registerTask('default', ["watch"]);
+	grunt.registerTask('build', ['bower_concat', 'compass:compile']);
 };

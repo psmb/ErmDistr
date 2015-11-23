@@ -35,7 +35,8 @@
 
         "sfi/styleguide": "@dev",
         "sfi/grid": "@dev",
-        "sfi/shared": "@dev"
+        "sfi/shared": "dev-ermolaev",
+        "m12/neos-plugin-dbexport": "dev-master"
     },
     "require-dev": {
         "typo3/buildessentials": "2.3.*",

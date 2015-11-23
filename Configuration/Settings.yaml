@@ -3,7 +3,7 @@ TYPO3:
     persistence:
       backendOptions:
         driver:   pdo_mysql
-        dbname: erm
+        dbname: db
         user: admin
         password: pass
         host: db

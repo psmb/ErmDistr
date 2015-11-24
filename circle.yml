@@ -1,6 +1,8 @@
 machine:
   python:
     version: 2.7.5
+  php:
+    version: 5.5.11
 dependencies:
   override:
     - git clone https://github.com/sfi-ru/ansible-deploy ../ansible-deploy

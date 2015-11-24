@@ -1,4 +1,5 @@
 prototype(TYPO3.Neos.NodeTypes:Image) {
+	partialRootPath = "resource://Sfi.Erm/Private/Templates/Partials"
 	imageClassName = "Figure"
 	maximumWidth = 1200
 	maximumHeight = 800

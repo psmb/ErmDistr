@@ -3,8 +3,9 @@ machine:
     version: 2.7.5
 dependencies:
   override:
-    - git clone https://github.com/sfi-ru/ansible-deploy
+    - git clone https://github.com/sfi-ru/ansible-deploy ../ansible-deploy
     - pip install ansible
+    - pip install httplib2
 test:
   override:
     - echo "No tests to run"

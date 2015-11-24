@@ -5,7 +5,7 @@ machine:
     version: 5.5.11
 dependencies:
   override:
-    - git clone https://github.com/sfi-ru/ansible-deploy ../ansible-deploy
+    - git clone https://github.com/sfi-ru/ansible-deploy
     - pip install ansible
     - pip install httplib2
 test:
@@ -15,6 +15,6 @@ deployment:
   prod:
     branch: master
     commands:
-      - cd ~/ansible-deploy
+      - cd ansible-deploy
       - touch 'i'
-      - ansible-playbook ~/ansible-deploy/deploy.yml --extra-vars "REPOSITORY_URL=https://github.com/sfi-ru/ErmDistr DOMAIN=ermolaev.co HOST=server.psmb.ru PORT=1124" -i 'i'
+      - ansible-playbook deploy.yml --extra-vars "REPOSITORY_URL=https://github.com/sfi-ru/ErmDistr DOMAIN=ermolaev.co HOST=server.psmb.ru PORT=1124" -i 'i'

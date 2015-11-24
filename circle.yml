@@ -13,5 +13,5 @@ deployment:
   prod:
     branch: master
     commands:
-      - ~/cd ansible-deploy
+      - cd ~/ansible-deploy
       - ansible-playbook deploy.yml --extra-vars "REPOSITORY_URL=https://github.com/sfi-ru/ErmDistr DOMAIN=ermolaev.co HOST=server.psmb.ru PORT=1124"

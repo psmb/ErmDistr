@@ -1,0 +1,16 @@
+machine:
+  python:
+    version: 2.7.5
+dependencies:
+  override:
+    - git clone https://github.com/sfi-ru/ansible-deploy
+    - pip install ansible
+test:
+  override:
+    - echo "No tests to run"
+deployment:
+  prod:
+    branch: master
+    commands:
+      - cd ansible-deploy
+      - ansible-playbook deploy.yml --extra-vars "REPOSITORY_URL=https://github.com/sfi-ru/ErmDistr DOMAIN=ermolaev.co HOST=server.psmb.ru PORT=1124"

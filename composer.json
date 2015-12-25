@@ -12,13 +12,12 @@
         { "type": "git", "url": "https://github.com/sfi-ru/Sfi.Grid.git" }
     ],
     "require": {
-        "typo3/neos": "2.0.*",
-        "typo3/neos-nodetypes": "2.0.*",
-
-        "typo3/neos-seo": "~1.0",
-        "typo3/imagine": "~2.0",
-        "typo3/form": "~2.0",
-        "typo3/setup": "~2.0",
+        "typo3/neos": "~2.1.0",
+        "typo3/neos-nodetypes": "~2.1.0",
+        "typo3/neos-seo": "@dev",
+        "typo3/imagine": "@dev",
+        "typo3/form": "@dev",
+        "typo3/setup": "@dev",
 
         "sfi/styleguide": "@dev",
         "sfi/grid": "@dev",

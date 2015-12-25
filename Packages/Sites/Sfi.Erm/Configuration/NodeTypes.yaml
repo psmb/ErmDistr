@@ -3,7 +3,7 @@
   ui:
     label: 'Main Page'
   superTypes:
-    - 'TYPO3.Neos.NodeTypes:Page'
+    'TYPO3.Neos.NodeTypes:Page': true
   childNodes:
     header:
       type: 'TYPO3.Neos.NodeTypes:Html'
@@ -13,107 +13,96 @@
       type: 'TYPO3.Neos.NodeTypes:Image'
     introText:
       type: 'TYPO3.Neos.NodeTypes:Text'
-
 'Sfi.Erm:Doctor':
   ui:
-    label: 'Doctor'
+    label: Doctor
   superTypes:
-    - 'TYPO3.Neos.NodeTypes:Page'
+    'TYPO3.Neos.NodeTypes:Page': true
   properties:
     description:
       type: string
       defaultValue: '<p>Short doctor description</p>'
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
     credo:
       type: string
       defaultValue: '<p>Credo</p>'
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
   childNodes:
     picture:
       type: 'TYPO3.Neos.NodeTypes:Image'
-
 'Sfi.Erm:ServiceCategory':
   ui:
     label: 'Service category'
   superTypes:
-    - 'TYPO3.Neos:Shortcut'
+    'TYPO3.Neos:Shortcut': true
   constraints:
     nodeTypes:
-      '*': FALSE
-      'Sfi.Erm:Service': TRUE
-
+      '*': false
+      'Sfi.Erm:Service': true
 'Sfi.Erm:Service':
   ui:
-    label: 'Service'
+    label: Service
   superTypes:
-    - 'TYPO3.Neos.NodeTypes:Page'
+    'TYPO3.Neos.NodeTypes:Page': true
   childNodes:
     price:
       type: 'Sfi.Erm:ServicePrice'
-
-
-
-
 'Sfi.Erm:ServicePrice':
   ui:
-    label: 'Price'
+    label: Price
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   properties:
     text:
       type: string
       defaultValue: '<table><tr><td>Service title</td><td>100</td></tr></table>'
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         aloha:
-          'format':
-            'b': FALSE
-            'i': FALSE
-            'u': FALSE
-            'sub': FALSE
-            'sup': FALSE
-            'p': FALSE
-            'h1': FALSE
-            'h2': FALSE
-            'h3': FALSE
-            'pre': FALSE
-            'removeFormat': TRUE
-          'table':
-            'table': TRUE
-          'list':
-            'ol': FALSE
-            'ul': FALSE
-          'link':
-            'a': FALSE
-
+          format:
+            b: false
+            i: false
+            u: false
+            sub: false
+            sup: false
+            p: false
+            h1: false
+            h2: false
+            h3: false
+            pre: false
+            removeFormat: true
+          table:
+            table: true
+          list:
+            ol: false
+            ul: false
+          link:
+            a: false
 'Sfi.Erm:PriceList':
   ui:
     label: 'Price list'
   superTypes:
-    - 'TYPO3.Neos:Content'
-
+    'TYPO3.Neos:Content': true
 'Sfi.Erm:DoctorsList':
   ui:
     label: 'Doctors list'
   superTypes:
-    - 'TYPO3.Neos:Content'
-
-
+    'TYPO3.Neos:Content': true
 'Sfi.Erm:Testimony':
   ui:
-    label: 'Testimony'
+    label: Testimony
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   properties:
     name:
       type: string
       defaultValue: '<p>Name</p>'
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
     text:
       type: string
       defaultValue: '<p>You are so great!</p>'
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true

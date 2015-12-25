@@ -3,7 +3,7 @@ TYPO3:
     userInterface:
       inspector:
         dataTypes:
-          'TYPO3\Media\Domain\Model\ImageVariant':
+          'TYPO3\Media\Domain\Model\ImageInterface':
             editorOptions:
               crop:
                 aspectRatio:

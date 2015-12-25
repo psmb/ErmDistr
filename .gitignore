@@ -40,3 +40,5 @@ Configuration/Development/Settings.yaml
 /flow.bat
 /Readme.rst
 /Upgrading.rst
+/Configuration/Development/Caches.yaml.example
+/Configuration/Production/Caches.yaml.example

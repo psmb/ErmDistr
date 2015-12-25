@@ -4,10 +4,6 @@ dbdata:
   volumes:
     - /var/lib/mysql
 
-redis:
-  image: redis
-  restart: always
-
 db:
   image: million12/mariadb:latest
   ports:
@@ -22,35 +18,32 @@ webdata:
   image: busybox:latest
   command: echo webdata
   volumes:
-    - data:/data
-    - Persistent:/data/www/ermolaev.co/surf/shared/Data/Persistent
+    - /data
+    - ./Persistent:/data/www/shared/Data/Persistent
     - /etc/localtime:/etc/localtime:ro
 
 web:
-  image: dimaip/ermdistr
+  image: dimaip/neos-bare
+  ports:
+    - '80'
   links:
     - db:db
-    - redis
   volumes_from:
     - webdata
   environment:
-    VIRTUAL_HOST: 'ermolaev.co,dev.ermolaev.co,next.ermolaev.co'
-    T3APP_NAME: 'ermolaev.co'
-    T3APP_BUILD_REPO_URL: 'https://github.com/sfi-ru/ErmDistr.git'
-    T3APP_USE_SURF_DEPLOYMENT: TRUE
+    VIRTUAL_HOST: 'ermolaev.co,dev.ermolaev.co,next.ermolaev.co,www.ermolaev.co'
+    REPOSITORY_URL: 'https://github.com/sfi-ru/ErmDistr'
   restart: always
 
 ssh:
   image: million12/php-app-ssh
   ports:
-    - '22'
+    - '1124:22'
   links:
     - db:db
-    - redis
     - web:web
   volumes_from:
     - webdata
   environment:
     IMPORT_GITHUB_PUB_KEYS: dimaip
-    SSH_HOST: 'ermolaev'
   restart: always

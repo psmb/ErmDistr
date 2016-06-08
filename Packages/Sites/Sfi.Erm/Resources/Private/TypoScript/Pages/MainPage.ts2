@@ -3,10 +3,10 @@ mainPage < default{
 	body{
 		templatePath = 'resource://Sfi.Erm/Private/Templates/Pages/MainPage.html'
 		introPicture = TYPO3.Neos.NodeTypes:Image{
-			@override.node = ${q(node).children('introPicture').get(0)}
+			@context.node = ${q(node).children('introPicture').get(0)}
 		}
 		introText = TYPO3.Neos.NodeTypes:Text{
-			@override.node = ${q(node).children('introText').get(0)}
+			@context.node = ${q(node).children('introText').get(0)}
 		}
 		
 	}

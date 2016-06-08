@@ -22,10 +22,10 @@ prototype(Sfi.Erm:Page) < prototype(TYPO3.Neos:Page) {
 		sectionName = 'body'
 
 		header = TYPO3.Neos.NodeTypes:Html{
-			@override.node = ${q(site).children('header').get(0)}
+			@context.node = ${q(site).children('header').get(0)}
 		}
 		footer = TYPO3.Neos.NodeTypes:Html{
-			@override.node = ${q(site).children('footer').get(0)}
+			@context.node = ${q(site).children('footer').get(0)}
 		}
 
 		menu = Menu{

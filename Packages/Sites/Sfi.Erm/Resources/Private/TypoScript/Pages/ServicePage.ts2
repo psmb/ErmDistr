@@ -2,7 +2,7 @@ service < default{
 	bodyTag.attributes.class = 'Service'
 	body{
 		content.main = Sfi.Erm:Service {
-			@override.node = ${q(node).get(0)}
+			@context.node = ${q(node).get(0)}
 		}
 	}
 }

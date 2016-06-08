@@ -1,7 +1,7 @@
 prototype(Sfi.Erm:Service) {
 	sectionName = 'full'
 	price = Sfi.Erm:ServicePrice {
-		@override.node = ${q(node).children('price').get(0)}
+		@context.node = ${q(node).children('price').get(0)}
 	}
 
 	@cache {

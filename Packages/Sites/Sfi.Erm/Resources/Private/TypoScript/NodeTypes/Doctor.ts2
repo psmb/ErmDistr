@@ -4,7 +4,7 @@ prototype(Sfi.Erm:Doctor) {
 		nodePath = 'main'
 	}
 	picture = TYPO3.Neos.NodeTypes:Image{
-		@override.node = ${q(node).children('picture').get(0)}
+		@context.node = ${q(node).children('picture').get(0)}
 		width = 400
 		height = 400
 		allowCropping = TRUE

@@ -2,7 +2,7 @@ doctor < default{
 	bodyTag.attributes.class = 'Doctor'
 	body{
 		content.main = Sfi.Erm:Doctor {
-			@override.node = ${q(node).get(0)}
+			@context.node = ${q(node).get(0)}
 		}
 	}
 }

@@ -1,0 +1,8 @@
+.stretch-wrap {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.stretch-spacer {
+	flex: 1;
+}

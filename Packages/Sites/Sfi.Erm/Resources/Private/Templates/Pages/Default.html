@@ -35,11 +35,15 @@
 </head>
 <body>
 	<f:section name="body">
-		<f:render partial="Header.html" arguments="{_all}"/>
-		{content.main -> f:format.raw()}
-		<f:render partial="Footer.html"  arguments="{_all}"/>
+		<div class="stretch-wrap">
+			<div class="stretch-spacer">
+				<f:render partial="Header.html" arguments="{_all}"/>
+				{content.main -> f:format.raw()}
+			</div>
+			<f:render partial="Footer.html"  arguments="{_all}"/>
+		</div>
 	</f:section>
-	
+
 	<f:section name="bodyScripts">
 		<script type="text/javascript" src="{f:uri.resource(path: 'Built/_bower.js', package: 'Sfi.Erm')}"></script>
 		<script type="text/javascript" src="{f:uri.resource(path: 'js/plugins.js', package: 'Sfi.Erm')}"></script>

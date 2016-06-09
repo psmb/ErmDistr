@@ -4,5 +4,13 @@ prototype(Sfi.Erm:PriceList) {
 		prototype(Sfi.Erm:Service) {
 			sectionName = 'short'
 		}
+		@cache {
+			mode = 'cached'
+			entryTags {
+				1 = ${'Node_' + documentNode.identifier}
+				2 = ${'NodeType_Sfi.Erm:Service'}
+				3 = ${'NodeType_Sfi.Erm:Doctor'}
+			}
+		}
 	}
 }

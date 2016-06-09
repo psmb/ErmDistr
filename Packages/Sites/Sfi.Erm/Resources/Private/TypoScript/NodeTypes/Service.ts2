@@ -8,12 +8,12 @@ prototype(Sfi.Erm:Service) {
 			picture.width = 250
 			picture.height = 250
 		}
-		@process.wrap = ${'
-			<div class="DoctorsList">
+		@process.wrap = ${q(node).property('doctors') &&
+			'<div class="DoctorsList">
 				<div class="H3">Доктора, оказывающие услугу:</div>
 				<ul class="large-block-grid-4 medium-block-grid-3 small-block-grid-2">' + value + '</ul>
-			</div>
-		'}
+			</div>'
+		}
 	}
 
 	@cache {

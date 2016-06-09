@@ -13,7 +13,14 @@
 		</div>
 		<div class="row">
 			<div class="large-8 large-offset-2 medium-10 medium-offset-1 columns">
-				<div class="DoctorFull-Text">{content.main -> f:format.raw()}</div>
+				<div class="DoctorFull-Text">
+					{main -> f:format.raw()}
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="columns">
+				{services -> f:format.raw()}
 			</div>
 		</div>
 	</div>

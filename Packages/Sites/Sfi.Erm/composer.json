@@ -37,5 +37,13 @@
             "TYPO3.Neos-20150303231600",
             "TYPO3.TYPO3CR-20150510103823"
         ]
+    },
+    "require": {
+        "typo3/neos": "*",
+        "typo3/neos-nodetypes": "*",
+        "sfi/styleguide": "*",
+        "sfi/grid": "*",
+        "sfi/shared": "*",
+        "flowpack/listable": "*"
     }
 }

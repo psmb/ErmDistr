@@ -10,6 +10,22 @@ prototype(Sfi.Erm:Doctor) {
 		allowCropping = TRUE
 	}
 
+	prototype(Sfi.Erm:Service) {
+		sectionName = 'short'
+		doctors>
+	}
+	services = Flowpack.Listable:List {
+		@context.listTitleClass = 'H2'
+		@context.listTitle = 'Услуги, оказываемые этим врачом:'
+		prototype(Flowpack.Listable:Listable) {
+			@context.sortProperty = 'title'
+			@context.paginationEnabled = ${false}
+			@context.listClass = 'Sections Sections--AccordionOnly js-sections'
+			@context.itemRenderer = 'Sfi.Erm:Service'
+			collection = ${q(site).find('[instanceof Sfi.Erm:Service]').filterByReference('doctors', documentNode).get()}
+		}
+	}
+
 	@cache {
 		mode = 'cached'
 		entryTags {

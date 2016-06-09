@@ -71,6 +71,16 @@
                 ul: false
                 link:
                   a: false
+    doctors:
+      type: references
+      ui:
+        label: 'Доктора, оказывающие услугу'
+        reloadIfChanged: true
+        inspector:
+          group: document
+          editorOptions:
+            nodeTypes:
+              - 'Sfi.Erm:Doctor'
 'Sfi.Erm:PriceList':
   ui:
     label: 'Price list'

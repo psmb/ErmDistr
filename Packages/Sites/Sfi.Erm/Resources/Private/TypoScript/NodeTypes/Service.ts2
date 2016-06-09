@@ -1,4 +1,26 @@
 prototype(Sfi.Erm:Service) {
 	sectionName = 'full'
-	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+
+	doctors = Sfi.Widgets:ContentCollection {
+		collection = ${q(node).property('doctors')}
+		prototype(Sfi.Erm:Doctor) {
+			sectionName = 'short'
+			picture.width = 250
+			picture.height = 250
+		}
+		@process.wrap = ${'
+			<div class="DoctorsList">
+				<div class="H3">Доктора, оказывающие услугу:</div>
+				<ul class="large-block-grid-4 medium-block-grid-3 small-block-grid-2">' + value + '</ul>
+			</div>
+		'}
+	}
+
+	@cache {
+		mode = 'cached'
+		entryTags {
+			1 = ${'Node_' + documentNode.identifier}
+			2 = ${'NodeType_Sfi.Erm:Doctor'}
+		}
+	}
 }

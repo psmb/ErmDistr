@@ -10,6 +10,7 @@
 				<div class="ServicePrice">
 					{neos:contentElement.editable(property: 'price')}
 				</div>
+				{doctors -> f:format.raw()}
 			</div>
 		</div>
 	</div>
@@ -29,6 +30,7 @@
 		<div class="ServiceCategory">
 			<div class="ServicePrice">
 				{node.properties.price -> f:format.raw()}
+				{doctors -> f:format.raw()}
 			</div>
 		</div>
 

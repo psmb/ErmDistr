@@ -10,20 +10,14 @@ prototype(Sfi.Erm:Doctor) {
 		allowCropping = TRUE
 	}
 
-	prototype(Sfi.Erm:Service) {
-		sectionName = 'short'
-		doctors>
-	}
-	services = Flowpack.Listable:List {
-		@context.listTitleClass = 'H2'
-		@context.listTitle = 'Услуги, оказываемые этим врачом:'
-		prototype(Flowpack.Listable:Listable) {
-			@context.sortProperty = 'title'
-			@context.paginationEnabled = ${false}
-			@context.listClass = 'Sections Sections--AccordionOnly js-sections'
-			@context.itemRenderer = 'Sfi.Erm:Service'
-			collection = ${q(site).find('[instanceof Sfi.Erm:Service]').filterByReference('doctors', documentNode).get()}
+
+	services = Sfi.Erm:PriceList {
+		@process.title = ${'<div class="H2">Услуги, оказываемые этим врачом:</div>' + value}
+		prototype(Sfi.Erm:Service) {
+			sectionName = 'short'
+			doctors>
 		}
+		content.collection = ${q(site).find('[instanceof Sfi.Erm:Service]').filterByReference('doctors', documentNode).get()}
 	}
 
 	@cache {
@@ -31,6 +25,7 @@ prototype(Sfi.Erm:Doctor) {
 		entryTags {
 			1 = ${'Node_' + documentNode.identifier}
 			2 = ${'DescendantOf_' + documentNode.identifier}
+			3 = ${'NodeType_Sfi.Erm:Service'}
 		}
 	}
 	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping

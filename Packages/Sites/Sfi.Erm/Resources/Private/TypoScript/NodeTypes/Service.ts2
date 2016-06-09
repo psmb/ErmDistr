@@ -10,7 +10,7 @@ prototype(Sfi.Erm:Service) {
 		}
 		@process.wrap = ${q(node).property('doctors') &&
 			'<div class="DoctorsList">
-				<div class="H3">Доктора, оказывающие услугу:</div>
+				<div class="H3">Доктора, оказывающие эту услугу:</div>
 				<ul class="large-block-grid-4 medium-block-grid-3 small-block-grid-2">' + value + '</ul>
 			</div>'
 		}

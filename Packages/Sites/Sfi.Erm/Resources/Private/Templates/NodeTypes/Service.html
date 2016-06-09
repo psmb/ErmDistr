@@ -1,18 +1,37 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
 <f:section name="full">
+
 	<div class="ServiceFull">
 		<div class="row">
 			<div class="columns">
-				<h1 class="Service-Title">{node.properties.title}</h1>
+				<h1 class="Service-Title">{neos:contentElement.editable(property: 'title')}</h1>
 				<div class="Service-Description">{content.main -> f:format.raw()}</div>
-				<div>{price -> f:format.raw()}</div>
+				<div class="ServicePrice">
+					{neos:contentElement.editable(property: 'price')}
+				</div>
 			</div>
 		</div>
 	</div>
+
 </f:section>
 
 <f:section name="short">
-	<div class="ServiceShort">
-		<h3 class="ServiceShort-Title">{node.properties.title}</h3>
-		<div>{price -> f:format.raw()}</div>
+
+	<div class="Sections-AccordionTitle">
+		<a href="#{node.name}" class="Sections-Anchor ">
+			{node.properties.title}
+		</a>
 	</div>
+
+	<div class="Sections-Panel" id="{node.name}">
+
+		<div class="ServiceCategory">
+			<div class="ServicePrice">
+				{node.properties.price -> f:format.raw()}
+			</div>
+		</div>
+
+	</div>
+
 </f:section>

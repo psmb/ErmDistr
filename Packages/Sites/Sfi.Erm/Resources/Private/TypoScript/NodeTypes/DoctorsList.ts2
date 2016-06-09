@@ -7,4 +7,11 @@ prototype(Sfi.Erm:DoctorsList) {
 			picture.height = 250
 		}
 	}
+	@cache {
+		mode = 'cached'
+		entryTags {
+			1 = ${'Node_' + documentNode.identifier}
+			2 = ${'NodeType_Sfi.Erm:Doctor'}
+		}
+	}
 }

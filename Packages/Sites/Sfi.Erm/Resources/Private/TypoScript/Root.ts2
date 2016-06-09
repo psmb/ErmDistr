@@ -1,5 +1,52 @@
-/**
- * Root TypoScript template for the ermolaev.co site
- */
-include: Pages/_Default.ts2
-include: **/*
+include: OverrideStock.ts2
+include: NodeTypes/**/*.ts2
+
+prototype(Sfi.Erm:Page) < prototype(TYPO3.Neos:Page) {
+	head {
+		stylesheets.site = TYPO3.TypoScript:Template {
+			templatePath = 'resource://Sfi.Erm/Private/Templates/Pages/Page.html'
+			sectionName = 'stylesheets'
+		}
+		stylesheets.backend = TYPO3.TypoScript:Template {
+			templatePath = 'resource://Sfi.Erm/Private/Templates/Pages/Page.html'
+			sectionName = 'backendStylesheets'
+			@process.1=${node.context.workspaceName != 'live' ? value:''}
+		}
+		javascripts.site = TYPO3.TypoScript:Template {
+			templatePath = 'resource://Sfi.Erm/Private/Templates/Pages/Page.html'
+			sectionName = 'headScripts'
+		}
+	}
+
+	body {
+		templatePath = 'resource://Sfi.Erm/Private/Templates/Pages/Page.html'
+		partialRootPath = 'resource://Sfi.Erm/Private/Templates/Partials/'
+		sectionName = 'body'
+
+		header = TYPO3.Neos.NodeTypes:Html{
+			@context.node = ${q(site).children('header').get(0)}
+		}
+		footer = TYPO3.Neos.NodeTypes:Html{
+			@context.node = ${q(site).children('footer').get(0)}
+		}
+
+		menu = Menu{
+			entryLevel = 1
+			maximumLevels = 2
+		}
+
+		main = PrimaryContent {
+			renderByType {
+				condition = TRUE
+				type = ${q(node).property('_nodeType.name')}
+			}
+		}
+
+		javascripts.site = TYPO3.TypoScript:Template {
+			templatePath = 'resource://Sfi.Erm/Private/Templates/Pages/Page.html'
+			sectionName = 'bodyScripts'
+		}
+	}
+}
+
+page = Sfi.Erm:Page

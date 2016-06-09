@@ -1,0 +1,22 @@
+prototype(TYPO3.Neos.NodeTypes:Text) {
+	attributes.class = 'Text'
+}
+
+prototype(TYPO3.Neos.NodeTypes:Headline) {
+	attributes.class = 'Heading'
+}
+
+prototype(TYPO3.Neos.NodeTypes:Image) {
+	partialRootPath = 'resource://Sfi.Erm/Private/Templates/Partials'
+	imageClassName = 'Figure'
+	maximumWidth = 1200
+	maximumHeight = 800
+}
+
+# TODO: replace with own Page type
+prototype(TYPO3.Neos.NodeTypes:Page) {
+	templatePath = 'resource://Sfi.Erm/Private/Templates/NodeTypes/Page.html'
+	main = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+	}
+}

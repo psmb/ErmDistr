@@ -32,32 +32,23 @@
   childNodes:
     picture:
       type: 'TYPO3.Neos.NodeTypes:Image'
-'Sfi.Erm:ServiceCategory':
-  ui:
-    label: 'Service category'
-  superTypes:
-    'TYPO3.Neos:Shortcut': true
-  constraints:
-    nodeTypes:
-      '*': false
-      'Sfi.Erm:Service': true
 'Sfi.Erm:Service':
   ui:
     label: Service
   superTypes:
     'TYPO3.Neos.NodeTypes:Page': true
   childNodes:
-    price:
-      type: 'Sfi.Erm:ServicePrice'
-'Sfi.Erm:ServicePrice':
-  ui:
-    label: Price
-  superTypes:
-    'TYPO3.Neos:Content': true
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
   properties:
-    text:
+    title:
       type: string
-      defaultValue: '<table><tr><td>Service title</td><td>100</td></tr></table>'
+      defaultValue: 'Название услуги'
+      ui:
+        inlineEditable: true
+    price:
+      type: string
+      defaultValue: '<table><tr><td>Строка прайса</td><td>100</td></tr></table>'
       ui:
         inlineEditable: true
         aloha:
@@ -73,13 +64,13 @@
             h3: false
             pre: false
             removeFormat: true
-          table:
-            table: true
-          list:
-            ol: false
-            ul: false
-          link:
-            a: false
+            table:
+              table: true
+              list:
+                ol: false
+                ul: false
+                link:
+                  a: false
 'Sfi.Erm:PriceList':
   ui:
     label: 'Price list'

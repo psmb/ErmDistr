@@ -1,6 +1,15 @@
 .Footer {
+	position: relative;
 	background: $color-primary;
-	padding: 2*$u 0;
-	margin-top: 2*$u;
+	margin-top: 4*$u;
 	p {color: white;}
+}
+.Footer-inner {
+	padding: 2*$u 0;
+	background-color: $color-primary;
+	@media #{$large-up} {
+		position: absolute;
+		top: 5*$u;
+		right: 4*$u;
+	}
 }

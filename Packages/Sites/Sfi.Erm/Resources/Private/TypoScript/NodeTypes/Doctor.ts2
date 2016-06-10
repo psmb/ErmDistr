@@ -11,14 +11,21 @@ prototype(Sfi.Erm:Doctor) {
 	}
 
 
-	services = Sfi.Erm:PriceList {
-		@process.title = ${'<div class="H2">' + node.properties.title + ' оказывает услуги:</div>' + value}
-		prototype(Sfi.Erm:Service) {
-			sectionName = 'short'
-			doctors>
+	services = TYPO3.TypoScript:Array {
+		@context.services = ${q(site).find('[instanceof Sfi.Erm:Service]').filterByReference('doctors', documentNode).get()}
+		@if.notEmpty = ${!Array.isEmpty(services)}
+		title = ${'<div class="H2">' + node.properties.title + ' оказывает услуги:</div>' + value}
+		list = Sfi.Erm:PriceList {
+			prototype(Sfi.Erm:Service) {
+				sectionName = 'short'
+				doctors>
+			}
+			content.collection = ${services}
 		}
-		content.collection = ${q(site).find('[instanceof Sfi.Erm:Service]').filterByReference('doctors', documentNode).get()}
 	}
+
+
+
 
 	@cache {
 		mode = 'cached'

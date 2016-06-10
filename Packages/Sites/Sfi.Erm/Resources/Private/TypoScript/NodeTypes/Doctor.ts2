@@ -1,15 +1,16 @@
 prototype(Sfi.Erm:Doctor) {
 	sectionName = 'full'
+
 	main = TYPO3.Neos:ContentCollection {
 		nodePath = 'main'
 	}
+
 	picture = TYPO3.Neos.NodeTypes:Image {
 		@context.node = ${q(node).children('picture').get(0)}
 		width = 400
 		height = 400
 		allowCropping = TRUE
 	}
-
 
 	services = TYPO3.TypoScript:Array {
 		@context.services = ${q(site).find('[instanceof Sfi.Erm:Service]').filterByReference('doctors', documentNode).get()}
@@ -24,9 +25,7 @@ prototype(Sfi.Erm:Doctor) {
 		}
 	}
 
-
-
-
+	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
 	@cache {
 		mode = 'cached'
 		entryTags {
@@ -35,5 +34,4 @@ prototype(Sfi.Erm:Doctor) {
 			3 = ${'NodeType_Sfi.Erm:Service'}
 		}
 	}
-	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
 }

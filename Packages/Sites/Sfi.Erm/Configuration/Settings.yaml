@@ -1,6 +1,16 @@
 TYPO3:
+  Flow:
+    i18n:
+      defaultLocale: 'ru'
+    http:
+      baseUri: 'https://ermolaev.co/'
   Neos:
     userInterface:
+      navigateComponent:
+        structureTree:
+          loadingDepth: 0
+        nodeTree:
+          loadingDepth: 1
       inspector:
         dataTypes:
           'TYPO3\Media\Domain\Model\ImageInterface':

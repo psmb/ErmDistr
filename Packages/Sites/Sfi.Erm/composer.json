@@ -41,7 +41,6 @@
     "require": {
         "typo3/neos": "*",
         "typo3/neos-nodetypes": "*",
-        "sfi/styleguide": "*",
         "sfi/grid": "*",
         "sfi/shared": "*",
         "flowpack/listable": "*"

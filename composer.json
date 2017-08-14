@@ -18,7 +18,7 @@
         "typo3/form": "@dev",
         "typo3/setup": "@dev",
 
-        "sfi/grid": "@dev",
+        "sfi/grid": "dev-ermolaev",
         "sfi/shared": "dev-ermolaev",
         "flowpack/listable": "^0.4.1"
     },

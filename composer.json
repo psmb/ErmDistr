@@ -7,7 +7,6 @@
         "bin-dir": "bin"
     },
     "repositories": [
-        { "type": "git", "url": "https://github.com/sfi-ru/Sfi.Styleguide.git" },
         { "type": "git", "url": "https://github.com/sfi-ru/Sfi.Shared.git" },
         { "type": "git", "url": "https://github.com/sfi-ru/Sfi.Grid.git" }
     ],
@@ -19,10 +18,8 @@
         "typo3/form": "@dev",
         "typo3/setup": "@dev",
 
-        "sfi/styleguide": "@dev",
         "sfi/grid": "@dev",
         "sfi/shared": "dev-ermolaev",
-        "m12/neos-plugin-dbexport": "dev-master",
         "flowpack/listable": "^0.4.1"
     },
     "require-dev": {

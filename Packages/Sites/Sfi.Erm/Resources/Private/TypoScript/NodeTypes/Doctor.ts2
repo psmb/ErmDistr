@@ -1,7 +1,7 @@
 prototype(Sfi.Erm:Doctor) {
 	sectionName = 'full'
 
-	main = TYPO3.Neos:ContentCollection {
+	main = ContentCollection {
 		nodePath = 'main'
 	}
 
@@ -25,12 +25,13 @@ prototype(Sfi.Erm:Doctor) {
 		}
 	}
 
-	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+	@process.contentElementWrapping = ContentElementWrapping
 	@cache {
 		mode = 'cached'
+		entryIdentifier.node = ${node}
 		entryTags {
-			1 = ${'Node_' + documentNode.identifier}
-			2 = ${'DescendantOf_' + documentNode.identifier}
+			1 = ${'Node_' + node.identifier}
+			2 = ${'DescendantOf_' + node.identifier}
 			3 = ${'NodeType_Sfi.Erm:Service'}
 		}
 	}

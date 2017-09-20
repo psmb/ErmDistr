@@ -18,6 +18,9 @@ prototype(Sfi.Erm:Service) {
 
 	@cache {
 		mode = 'cached'
+		entryIdentifier {
+			node = ${node}
+		}
 		entryTags {
 			1 = ${'Node_' + documentNode.identifier}
 			2 = ${'NodeType_Sfi.Erm:Doctor'}

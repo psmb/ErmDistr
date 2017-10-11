@@ -15,7 +15,7 @@ prototype(Sfi.Erm:Service) {
 			</div>'
 		}
 	}
-
+	@process.contentElementWrapping = ContentElementWrapping
 	@cache {
 		mode = 'cached'
 		entryIdentifier {

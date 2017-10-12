@@ -25,6 +25,17 @@ prototype(Sfi.Erm:Doctor) {
 		}
 	}
 
+	testimonies = TYPO3.TypoScript:Array {
+		@context.testimonies = ${q(site).find('[instanceof Sfi.Erm:Testimony]').filterByReference('doctors', documentNode).get()}
+		@if.notEmpty = ${!Array.isEmpty(testimonies)}
+		title = ${'<div class="H2">Отзывы о враче:</div>' + value}
+		list = TYPO3.TypoScript:Collection {
+			collection = ${testimonies}
+			itemName = 'node'
+			itemRenderer = Sfi.Erm:Testimony
+		}
+	}
+
 	@process.contentElementWrapping = ContentElementWrapping
 	@cache {
 		mode = 'cached'
@@ -33,6 +44,7 @@ prototype(Sfi.Erm:Doctor) {
 			1 = ${'Node_' + node.identifier}
 			2 = ${'DescendantOf_' + node.identifier}
 			3 = ${'NodeType_Sfi.Erm:Service'}
+			3 = ${'NodeType_Sfi.Erm:Testimony'}
 		}
 	}
 }

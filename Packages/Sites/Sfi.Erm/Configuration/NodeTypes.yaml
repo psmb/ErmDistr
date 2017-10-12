@@ -94,6 +94,10 @@
 'Sfi.Erm:Testimony':
   ui:
     label: Testimony
+    inspector:
+      groups:
+        testimony:
+          label: 'Отзыв'
   superTypes:
     'TYPO3.Neos:Content': true
   properties:
@@ -107,3 +111,13 @@
       defaultValue: '<p>You are so great!</p>'
       ui:
         inlineEditable: true
+    doctors:
+      type: references
+      ui:
+        label: 'Доктора, упомянутые в отзыве'
+        reloadIfChanged: false
+        inspector:
+          group: testimony
+          editorOptions:
+            nodeTypes:
+              - 'Sfi.Erm:Doctor'

@@ -121,3 +121,10 @@
           editorOptions:
             nodeTypes:
               - 'Sfi.Erm:Doctor'
+    image:
+      type: TYPO3\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'Фото отзыва'
+        reloadIfChanged: TRUE
+        inspector:
+          group: testimony

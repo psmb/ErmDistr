@@ -1,5 +1,16 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
-<div class="Testimony">
-	<div class="Testimony-Text">{neos:contentElement.editable(property: 'text', tag: 'span')}</div>
-	<div class="Testimony-Name">—{neos:contentElement.editable(property: 'name', tag: 'span')}</div>
+{namespace media=TYPO3\Media\ViewHelpers}
+<div class="Testimony" style="display:flex">
+	<div class="Testimony-Body" style="margin-right: 12px">
+		<div class="Testimony-Text">{neos:contentElement.editable(property: 'text', tag: 'span')}</div>
+		<div class="Testimony-Name">—{neos:contentElement.editable(property: 'name', tag: 'span')}</div>
+	</div>
+	<f:if condition="{image}">
+		<div class="Testimony-Image" style="flex-shrink: 0; margin-top: 24px">
+			<a target="_blank" title="Открыть отзыв" href="{media:uri.image(asset: image, maximumWidth: 900)}">
+				<media:image asset="{image}" alt="{name}" width="150"
+				maximumWidth="150" height="150" maximumHeight="150" allowCropping="TRUE"/>
+			</a>
+		</div>
+	</f:if>
 </div>

@@ -1,0 +1,19 @@
+prototype(Sfi.Erm:News) {
+	sectionName = 'full'
+
+	main = ContentCollection {
+		nodePath = 'main'
+	}
+
+	imageUri = TYPO3.Neos:ImageUri {
+		asset = ${q(node).property('image')}
+		width = 600
+		height = 400
+		allowCropping = TRUE
+		allowUpScaling = TRUE
+	}
+
+	newsList = Sfi.Erm:NewsList
+
+	@process.contentElementWrapping = ContentElementWrapping
+}

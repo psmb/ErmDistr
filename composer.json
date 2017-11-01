@@ -16,12 +16,14 @@
         }
     ],
     "require": {
-        "neos/neos": "~3.0.0",
-        "neos/nodetypes": "~3.0.0",
-        "neos/seo": "~2.0.0",
-        "neos/imagine": "~3.0.0",
-        "neos/form": "~3.0.0",
-        "neos/setup": "~4.0.0",
+        "neos/neos": "~3.2.0",
+        "neos/nodetypes": "~3.2.0",
+        "neos/seo": "^2.0.0",
+        "neos/imagine": "~3.2.0",
+        "neos/form": "^3.0.0",
+        "neos/setup": "^4.0.0",
+        "neos/neos-ui": "dev-master",
+        "neos/neos-ui-compiled": "dev-master",
         "sfi/grid": "^2.1",
         "flowpack/listable": "^2.0.0"
     },

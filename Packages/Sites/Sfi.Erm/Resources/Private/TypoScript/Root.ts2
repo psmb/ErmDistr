@@ -5,16 +5,16 @@ prototype(Sfi.Erm:Page) < prototype(TYPO3.Neos:Page) {
 	@context.header = ${q(site).children('header').get(0)}
 	@context.footer = ${q(site).children('footer').get(0)}
 	head {
-		stylesheets.site = TYPO3.TypoScript:Template {
+		stylesheets.site = Neos.Fusion:Template {
 			templatePath = 'resource://Sfi.Erm/Private/Templates/Pages/Page.html'
 			sectionName = 'stylesheets'
 		}
-		stylesheets.backend = TYPO3.TypoScript:Template {
+		stylesheets.backend = Neos.Fusion:Template {
 			templatePath = 'resource://Sfi.Erm/Private/Templates/Pages/Page.html'
 			sectionName = 'backendStylesheets'
 			@process.1=${node.context.workspaceName != 'live' ? value:''}
 		}
-		javascripts.site = TYPO3.TypoScript:Template {
+		javascripts.site = Neos.Fusion:Template {
 			templatePath = 'resource://Sfi.Erm/Private/Templates/Pages/Page.html'
 			sectionName = 'headScripts'
 		}
@@ -44,7 +44,7 @@ prototype(Sfi.Erm:Page) < prototype(TYPO3.Neos:Page) {
 			}
 		}
 
-		javascripts.site = TYPO3.TypoScript:Template {
+		javascripts.site = Neos.Fusion:Template {
 			templatePath = 'resource://Sfi.Erm/Private/Templates/Pages/Page.html'
 			sectionName = 'bodyScripts'
 		}

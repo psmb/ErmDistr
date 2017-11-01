@@ -12,7 +12,7 @@ prototype(Sfi.Erm:Doctor) {
 		allowCropping = TRUE
 	}
 
-	services = TYPO3.TypoScript:Array {
+	services = Neos.Fusion:Array {
 		@context.services = ${q(site).find('[instanceof Sfi.Erm:Service]').filterByReference('doctors', documentNode).get()}
 		@if.notEmpty = ${!Array.isEmpty(services)}
 		title = ${'<div class="H2">' + node.properties.title + ' оказывает услуги:</div>' + value}
@@ -25,11 +25,11 @@ prototype(Sfi.Erm:Doctor) {
 		}
 	}
 
-	testimonies = TYPO3.TypoScript:Array {
+	testimonies = Neos.Fusion:Array {
 		@context.testimonies = ${q(site).find('[instanceof Sfi.Erm:Testimony]').filterByReference('doctors', documentNode).get()}
 		@if.notEmpty = ${!Array.isEmpty(testimonies)}
 		title = ${'<div class="H2">Отзывы о враче:</div>' + value}
-		list = TYPO3.TypoScript:Collection {
+		list = Neos.Fusion:Collection {
 			collection = ${testimonies}
 			itemName = 'node'
 			itemRenderer = Sfi.Erm:Testimony

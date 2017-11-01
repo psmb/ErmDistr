@@ -5,7 +5,7 @@ prototype(Sfi.Erm:Doctor) {
 		nodePath = 'main'
 	}
 
-	picture = TYPO3.Neos.NodeTypes:Image {
+	picture = Neos.NodeTypes:Image {
 		@context.node = ${q(node).children('picture').get(0)}
 		width = 400
 		height = 400

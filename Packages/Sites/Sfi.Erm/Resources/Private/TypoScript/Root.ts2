@@ -25,10 +25,10 @@ prototype(Sfi.Erm:Page) < prototype(TYPO3.Neos:Page) {
 		partialRootPath = 'resource://Sfi.Erm/Private/Templates/Partials/'
 		sectionName = 'body'
 
-		header = TYPO3.Neos.NodeTypes:Html{
+		header = Neos.NodeTypes:Html{
 			@context.node = ${header}
 		}
-		footer = TYPO3.Neos.NodeTypes:Html{
+		footer = Neos.NodeTypes:Html{
 			@context.node = ${footer}
 		}
 

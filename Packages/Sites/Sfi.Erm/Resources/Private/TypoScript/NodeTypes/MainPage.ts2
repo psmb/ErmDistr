@@ -1,8 +1,8 @@
 prototype(Sfi.Erm:MainPage) {
-  introPicture = TYPO3.Neos.NodeTypes:Image {
+  introPicture = Neos.NodeTypes:Image {
     @context.node = ${q(node).children('introPicture').get(0)}
   }
-  introText = TYPO3.Neos.NodeTypes:Text {
+  introText = Neos.NodeTypes:Text {
     @context.node = ${q(node).children('introText').get(0)}
   }
   main = TYPO3.Neos:ContentCollection {

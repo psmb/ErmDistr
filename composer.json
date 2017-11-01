@@ -5,21 +5,11 @@
         "vendor-dir": "Packages/Libraries",
         "bin-dir": "bin"
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/sfi-ru/Sfi.Shared.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/sfi-ru/Sfi.Grid.git"
-        }
-    ],
     "require": {
-        "neos/neos": "~3.2.0",
-        "neos/nodetypes": "~3.2.0",
+        "neos/neos": "^3.2.0",
+        "neos/nodetypes": "^3.0.0",
         "neos/seo": "^2.0.0",
-        "neos/imagine": "~3.2.0",
+        "neos/imagine": "^3.0.0",
         "neos/form": "^3.0.0",
         "neos/setup": "^4.0.0",
         "neos/neos-ui": "dev-master",

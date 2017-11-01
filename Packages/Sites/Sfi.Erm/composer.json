@@ -1,6 +1,6 @@
 {
     "name": "sfi/erm",
-    "type": "typo3-flow-site",
+    "type": "neos-site",
     "description": "Ermolaev.co site package",
     "autoload": {
         "psr-0": {

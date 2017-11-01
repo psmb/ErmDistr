@@ -2,6 +2,8 @@ include: OverrideStock.ts2
 include: NodeTypes/**/*.ts2
 
 prototype(Sfi.Erm:Page) < prototype(TYPO3.Neos:Page) {
+	@context.header = ${q(site).children('header').get(0)}
+	@context.footer = ${q(site).children('footer').get(0)}
 	head {
 		stylesheets.site = TYPO3.TypoScript:Template {
 			templatePath = 'resource://Sfi.Erm/Private/Templates/Pages/Page.html'
@@ -24,10 +26,10 @@ prototype(Sfi.Erm:Page) < prototype(TYPO3.Neos:Page) {
 		sectionName = 'body'
 
 		header = TYPO3.Neos.NodeTypes:Html{
-			@context.node = ${q(site).children('header').get(0)}
+			@context.node = ${header}
 		}
 		footer = TYPO3.Neos.NodeTypes:Html{
-			@context.node = ${q(site).children('footer').get(0)}
+			@context.node = ${footer}
 		}
 
 		menu = Menu{
@@ -45,6 +47,12 @@ prototype(Sfi.Erm:Page) < prototype(TYPO3.Neos:Page) {
 		javascripts.site = TYPO3.TypoScript:Template {
 			templatePath = 'resource://Sfi.Erm/Private/Templates/Pages/Page.html'
 			sectionName = 'bodyScripts'
+		}
+	}
+	@cache {
+		entryTags {
+			10 = ${'Node_' + header.identifier}
+			11 = ${'Node_' + footer.identifier}
 		}
 	}
 }

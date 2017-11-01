@@ -92,7 +92,7 @@
       validation:
         TYPO3.Neos/Validation/DateTimeValidator: {  }
     image:
-      type: TYPO3\Media\Domain\Model\ImageInterface
+      type: Neos\Media\Domain\Model\ImageInterface
       ui:
         label: 'Фото снаружи (если не задано, используется фото из обложки (cover))'
         reloadIfChanged: true

@@ -9,7 +9,7 @@ TYPO3:
           loadingDepth: 1
       inspector:
         dataTypes:
-          TYPO3\Media\Domain\Model\ImageInterface:
+          Neos\Media\Domain\Model\ImageInterface:
             editorOptions:
               crop:
                 aspectRatio:

@@ -39,7 +39,7 @@
     'Neos.NodeTypes:Page': true
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   properties:
     title:
       type: string
@@ -85,12 +85,12 @@
   ui:
     label: 'Price list'
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
 'Sfi.Erm:DoctorsList':
   ui:
     label: 'Doctors list'
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
 'Sfi.Erm:Testimony':
   ui:
     label: Testimony
@@ -99,7 +99,7 @@
         testimony:
           label: 'Отзыв'
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   properties:
     name:
       type: string

@@ -1,6 +1,6 @@
 'Sfi.Erm:News':
   superTypes:
-    'TYPO3.Neos:Document': true
+    'Neos.Neos:Document': true
   ui:
     label: Статья
     inspector:
@@ -9,7 +9,7 @@
           label: 'Атрибуты материала'
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   properties:
     title:
       ui:
@@ -90,7 +90,7 @@
           editorOptions:
             format: 'd-m-Y H:i'
       validation:
-        TYPO3.Neos/Validation/DateTimeValidator: {  }
+        Neos.Neos/Validation/DateTimeValidator: {  }
     image:
       type: Neos\Media\Domain\Model\ImageInterface
       ui:

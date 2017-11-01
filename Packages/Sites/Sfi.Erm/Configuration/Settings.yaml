@@ -1,5 +1,10 @@
 
-TYPO3:
+Neos:
+  Flow:
+    i18n:
+      defaultLocale: ru
+    http:
+      baseUri: 'https://ermolaev.co/'
   Neos:
     userInterface:
       navigateComponent:
@@ -22,9 +27,3 @@ TYPO3:
                   locked:
                     width: 0
                     height: 0
-Neos:
-  Flow:
-    i18n:
-      defaultLocale: ru
-    http:
-      baseUri: 'https://ermolaev.co/'

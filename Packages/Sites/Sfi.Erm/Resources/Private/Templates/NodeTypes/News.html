@@ -4,6 +4,7 @@
     <div class="large-8 large-offset-2 medium-10 medium-offset-1 columns">
       <div><img src="{imageUri}"/></div>
       <h1 class="H1 marginTop-triple">{node.properties.title}</h1>
+      <div class="marginVertical-double"><strong>{neos:contentElement.editable(property: 'author')}</strong></div>
       <div class="marginVertical-double">{neos:contentElement.editable(property: 'teaser')}</div>
       {main -> f:format.raw()}
       {newsList -> f:format.raw()}
@@ -16,7 +17,7 @@
     <neos:link.node node="{node}">
       <div><img src="{imageUri}"/></div>
       <h3 class="Paragraph--Large color-primary">{node.properties.title}</h3>
-      <div>{node.properties.teaser -> f:format.raw()}</div>
+      <div><strong>{node.properties.author -> f:format.raw()}</strong></div>
     </neos:link.node>
   </div>
 </f:section>

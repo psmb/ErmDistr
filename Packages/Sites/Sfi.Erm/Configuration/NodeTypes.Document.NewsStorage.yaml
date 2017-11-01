@@ -1,5 +1,0 @@
-'Sfi.Erm:NewsStorage':
-  superTypes:
-    'TYPO3.Neos:Document': true
-  ui:
-    label: Хранилище статей

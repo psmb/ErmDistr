@@ -1,4 +1,0 @@
-prototype(Sfi.Erm:NewsStorage) < prototype(TYPO3.TypoScript:Tag) {
-	@process.wrap = ${'<div class="row"><div class="large-8 large-offset-2 medium-10 medium-offset-1 columns">' + value + '</div>'}
-	content = Sfi.Erm:NewsList
-}

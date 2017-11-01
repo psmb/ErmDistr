@@ -82,7 +82,6 @@
         "typo3/neos": "*",
         "typo3/neos-nodetypes": "*",
         "sfi/grid": "*",
-        "sfi/shared": "*",
         "flowpack/listable": "*"
     }
 }

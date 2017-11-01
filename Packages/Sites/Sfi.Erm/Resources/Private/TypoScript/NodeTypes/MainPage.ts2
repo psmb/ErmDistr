@@ -5,7 +5,7 @@ prototype(Sfi.Erm:MainPage) {
   introText = Neos.NodeTypes:Text {
     @context.node = ${q(node).children('introText').get(0)}
   }
-  main = TYPO3.Neos:ContentCollection {
+  main = Neos.Neos:ContentCollection {
     nodePath = 'main'
   }
 }

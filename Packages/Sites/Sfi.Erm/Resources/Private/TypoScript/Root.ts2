@@ -1,7 +1,7 @@
 include: OverrideStock.ts2
 include: NodeTypes/**/*.ts2
 
-prototype(Sfi.Erm:Page) < prototype(TYPO3.Neos:Page) {
+prototype(Sfi.Erm:Page) < prototype(Neos.Neos:Page) {
 	@context.header = ${q(site).children('header').get(0)}
 	@context.footer = ${q(site).children('footer').get(0)}
 	head {

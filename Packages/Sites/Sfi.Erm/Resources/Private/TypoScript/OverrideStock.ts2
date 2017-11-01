@@ -16,7 +16,7 @@ prototype(Neos.NodeTypes:Image) {
 # TODO: replace with own Page type
 prototype(Neos.NodeTypes:Page) {
 	templatePath = 'resource://Sfi.Erm/Private/Templates/NodeTypes/Page.html'
-	main = TYPO3.Neos:ContentCollection {
+	main = Neos.Neos:ContentCollection {
 		nodePath = 'main'
 	}
 }

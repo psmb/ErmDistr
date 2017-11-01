@@ -5,7 +5,7 @@ prototype(Sfi.Erm:News) {
 		nodePath = 'main'
 	}
 
-	imageUri = TYPO3.Neos:ImageUri {
+	imageUri = Neos.Neos:ImageUri {
 		asset = ${q(node).property('image')}
 		width = 600
 		height = 400

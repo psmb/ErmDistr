@@ -1,0 +1,28 @@
+include: **/*.ts2
+
+prototype(Sfi.Widgets:Carousel) {
+    attributes.class = ${'Carousel js-carousel-' + q(node).property('responsive')}
+	content = Sfi.Widgets:ContentCollection
+
+	prototype(Neos.NodeTypes:Image){
+		maximumWidth = 600
+		maximumHeight = 400
+		allowCropping = TRUE
+	}
+}
+
+# WIP
+prototype(Sfi.Widgets:Link) {
+	attributes.class = 'Button--Light'
+	attributes.href = ${node.properties.target}
+	attributes.href.@process.convertUris = Neos.Neos:ConvertUris {
+		forceConversion = true
+	}
+}
+
+prototype(Sfi.Widgets:Asset) {
+	attributes.class = ${node.properties.variant}
+	attributes.href = ${'asset://' + node.properties.asset.identifier}
+	attributes.href.@process.convertUris = Neos.Neos:ConvertUris
+}
+

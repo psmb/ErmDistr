@@ -1,0 +1,31 @@
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
+<f:section name="main">
+	<div class="Sections js-sections {layout}">
+		<ul class="Sections-Tabs">
+			{tabs -> f:format.raw()}
+		</ul>
+		{panels -> f:format.raw()}
+	</div>
+</f:section>
+
+
+<f:section name="tab">
+	<li class="Sections-Tab">
+		<a class="Sections-Anchor" href="#{node.name}">
+			{tab -> f:format.raw()}
+		</a>
+	</li>
+</f:section>
+
+<f:section name="panel">
+	<div class="Sections-AccordionTitle">
+		<a href="#{node.name}" class="Sections-Anchor">
+			{accordion -> f:format.raw()}
+		</a>
+	</div>
+
+    <div class="Sections-Panel" id="{node.name}">
+		{panel -> f:format.raw()}
+    </div>
+</f:section>

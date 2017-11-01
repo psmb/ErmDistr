@@ -22,9 +22,8 @@
         "neos/imagine": "~3.0.0",
         "neos/form": "~3.0.0",
         "neos/setup": "~4.0.0",
-        "sfi/grid": "dev-ermolaev",
-        "sfi/shared": "dev-ermolaev",
-        "flowpack/listable": "^0.4.1"
+        "sfi/grid": "^2.1",
+        "flowpack/listable": "^2.0.0"
     },
     "scripts": {
         "post-update-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",

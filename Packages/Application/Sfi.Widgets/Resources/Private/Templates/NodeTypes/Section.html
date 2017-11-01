@@ -1,0 +1,19 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+
+<f:section name="tab">
+	<span>
+		<neos:contentElement.editable property="title" tag="span"/><span class="color-section"></span>
+	</span>
+</f:section>
+
+<f:section name="accordion">
+	{title}<span class="color-section"></span>
+</f:section>
+
+<f:section name="panel">
+	<div>
+		{content -> f:format.raw()}
+	</div>
+</f:section>
+

@@ -1,0 +1,14 @@
+# Render element with its own object
+prototype(Sfi.Widgets:AutoRender) < prototype(Neos.Fusion:Case) {
+	default{
+		condition = ${true}
+		type = ${q(node).property('_nodeType')}			
+	}
+}
+
+# Alternative to ContentCollection. No extra nodes! The only down side: no content handles.
+prototype(Sfi.Widgets:ContentCollection) < prototype(Neos.Fusion:Collection) {
+	collection = ${q(node).children()}
+	itemRenderer = Sfi.Widgets:AutoRender
+	itemName = 'node'
+}

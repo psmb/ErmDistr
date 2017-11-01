@@ -1,0 +1,169 @@
+
+'Sfi.Widgets:Asset':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Asset
+    group: contentWidgets
+    icon: icon-edit
+    inspector:
+      groups:
+        asset:
+          label: Asset
+          position: 'start 1'
+  properties:
+    title:
+      type: string
+      ui:
+        inlineEditable: true
+        aloha:
+          placeholder: 'Enter asset name'
+    asset:
+      type: Neos\Media\Domain\Model\Asset
+      ui:
+        inspector:
+          group: asset
+        label: Assets
+        reloadIfChanged: true
+    variant:
+      defaultValue: Asset-Button
+      type: string
+      ui:
+        label: 'Asset variant'
+        reloadIfChanged: true
+        inspector:
+          group: asset
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              Button--Light:
+                label: 'Button Light'
+              Button--Dark:
+                label: 'Button Dark'
+              ButtonInline:
+                label: Inline
+'Sfi.Widgets:Carousel':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Carousel
+    group: contentWidgets
+    inlineEditable: true
+    icon: icon-chevron-right
+    inspector:
+      groups:
+        carousel:
+          label: Carousel
+          position: 5
+  properties:
+    responsive:
+      defaultValue: 1x
+      type: string
+      ui:
+        label: 'Number of slides on desktop'
+        reloadIfChanged: true
+        inspector:
+          group: carousel
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              1x:
+                label: 1x
+              2x:
+                label: 2x
+              3x:
+                label: 3x
+  constraints:
+    nodeTypes:
+      'Neos.Neos:Document': false
+      '*': true
+'Sfi.Widgets:Sections':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Section container'
+    icon: icon-ellipsis-horizontal
+    group: contentWidgets
+    inlineEditable: true
+  properties:
+    layout:
+      defaultValue: Sections--Tabs
+      type: string
+      ui:
+        label: 'Section layout'
+        reloadIfChanged: true
+        inspector:
+          group: visibility
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              Sections--Tabs:
+                label: Tabs
+              Sections--VerticalTabs:
+                label: 'Vertical Tabs'
+              Sections--Pills:
+                label: Pills
+  constraints:
+    nodeTypes:
+      'Sfi.Widgets:Section': true
+'Sfi.Widgets:Section':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Section
+    group: contentWidgets
+    inlineEditable: true
+    inspector:
+      groups:
+        title:
+          label: 'Section properties'
+          position: 100
+  properties:
+    title:
+      type: string
+      defaultValue: 'One more tab'
+  constraints:
+    nodeTypes:
+      'Neos.Neos:Document': false
+      '*': true
+'Sfi.Widgets:Link':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Link
+    icon: icon-external-link
+    group: contentBlocks
+    inspector:
+      groups:
+        link:
+          label: Link
+          position: 100
+  properties:
+    variant:
+      defaultValue: Link-Button
+      type: string
+      ui:
+        label: 'Link variant'
+        reloadIfChanged: true
+        inspector:
+          group: link
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              Link-Button:
+                label: Button
+              Link-Inline:
+                label: Inline
+    target:
+      type: string
+      ui:
+        label: 'Link target'
+        reloadIfChanged: false
+        inspector:
+          group: link
+          editor: Neos.Neos/Inspector/Editors/LinkEditor
+    text:
+      type: string
+      defaultValue: 'Link text'
+      ui:
+        inlineEditable: true

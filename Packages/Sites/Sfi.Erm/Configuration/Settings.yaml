@@ -1,9 +1,5 @@
+
 TYPO3:
-  Flow:
-    i18n:
-      defaultLocale: 'ru'
-    http:
-      baseUri: 'https://ermolaev.co/'
   Neos:
     userInterface:
       navigateComponent:
@@ -13,16 +9,22 @@ TYPO3:
           loadingDepth: 1
       inspector:
         dataTypes:
-          'TYPO3\Media\Domain\Model\ImageInterface':
+          TYPO3\Media\Domain\Model\ImageInterface:
             editorOptions:
               crop:
                 aspectRatio:
                   options:
-                    fourFive: ~
-                    fiveSeven: ~
-                    sixteenNine: ~
-                  enableOriginal: TRUE
-                  allowCustom: TRUE
+                    fourFive: null
+                    fiveSeven: null
+                    sixteenNine: null
+                  enableOriginal: true
+                  allowCustom: true
                   locked:
                     width: 0
                     height: 0
+Neos:
+  Flow:
+    i18n:
+      defaultLocale: ru
+    http:
+      baseUri: 'https://ermolaev.co/'

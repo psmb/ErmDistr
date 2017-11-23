@@ -14,7 +14,7 @@ prototype(Sfi.Erm:News) {
 	}
 
 	newsList = Sfi.Erm:NewsList {
-		collection.@process.filterOutSelf = ${q(value).filter('[_identifier != "' + documentNode.identifier + '"]').get()}
+		collection.@process.filterOutSelf = ${value.filter('[_identifier != "' + documentNode.identifier + '"]')}
 	}
 
 	@process.contentElementWrapping = ContentElementWrapping

@@ -7,7 +7,7 @@
 	</div>
 	<f:if condition="{image}">
 		<div class="Testimony-Image" style="flex-shrink: 0; margin-top: 24px">
-			<a target="_blank" title="Открыть отзыв" href="{media:uri.image(asset: image, maximumWidth: 900)}">
+			<a target="_blank" title="Открыть отзыв" href="{media:uri.image(image: image, maximumWidth: 900)}">
 				<media:image image="{image}" alt="{name}" width="150"
 				maximumWidth="150" height="150" maximumHeight="150" allowCropping="TRUE"/>
 			</a>

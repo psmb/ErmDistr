@@ -11,8 +11,9 @@
 
 
 <f:section name="tab">
-	<li class="Sections-Tab">
-		<a class="Sections-Anchor" href="#{node.name}">
+	<!-- TODO: remove styles when build is fixed -->
+	<li class="Sections-Tab" style="margin: 0 12px">
+		<a class="Sections-Anchor" href="#{node.name}" style="padding: 12px 24px">
 			{tab -> f:format.raw()}
 		</a>
 	</li>

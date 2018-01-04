@@ -22,10 +22,12 @@ web:
   volumes:
     - /data
   environment:
-    - VIRTUAL_HOST='ermolaev.co,dev.ermolaev.co,next.ermolaev.co,www.ermolaev.co'
-    - REPOSITORY_URL='https://github.com/sfi-ru/ErmDistr'
-    - LETSENCRYPT_HOST='ermolaev.co,www.ermolaev.co'
-    - LETSENCRYPT_EMAIL='dimaip@gmail.com'
-    - IMPORT_GITHUB_PUB_KEYS='dimaip,zaveryukha'
+    - VIRTUAL_HOST=ermolaev.co,dev.ermolaev.co,next.ermolaev.co,www.ermolaev.co
+    - REPOSITORY_URL=https://github.com/sfi-ru/ErmDistr
+    - LETSENCRYPT_HOST=ermolaev.co,www.ermolaev.co
+    - LETSENCRYPT_EMAIL=dimaip@gmail.com
+    - IMPORT_GITHUB_PUB_KEYS=dimaip,zaveryukha
+    - AWS_RESOURCES_ARN=s3://psmb-neos-resources/sites/ermolaev/
+    - AWS_REGION=eu-central-1
     - AWS_ACCESS_KEY_ID
     - AWS_SECRET_ACCESS_KEY

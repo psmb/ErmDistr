@@ -1,0 +1,31 @@
+redis:
+  image: redis:3.2
+db:
+  image: mariadb:10.3
+  restart: always
+  volumes:
+    - /var/lib/mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: pass
+    MYSQL_DATABASE: db
+    MYSQL_USER: admin
+    MYSQL_PASSWORD: pass
+web:
+  image: dimaip/docker-neos-alpine:latest
+  restart: always
+  ports:
+    - '80'
+    - '1124:22'
+  links:
+    - db:db
+    - redis:redis
+  volumes:
+    - /data
+  environment:
+    - VIRTUAL_HOST='ermolaev.co,dev.ermolaev.co,next.ermolaev.co,www.ermolaev.co'
+    - REPOSITORY_URL='https://github.com/sfi-ru/ErmDistr'
+    - LETSENCRYPT_HOST='ermolaev.co,www.ermolaev.co'
+    - LETSENCRYPT_EMAIL='dimaip@gmail.com'
+    - IMPORT_GITHUB_PUB_KEYS='dimaip,zaveryukha'
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY

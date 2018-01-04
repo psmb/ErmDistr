@@ -15,7 +15,8 @@
         "neos/neos-ui": "dev-master",
         "neos/neos-ui-compiled": "dev-master",
         "sfi/grid": "^2.1",
-        "flowpack/listable": "^2.0.0"
+        "flowpack/listable": "^2.0.0",
+        "flownative/aws-s3": "2.*"
     },
     "scripts": {
         "post-update-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",

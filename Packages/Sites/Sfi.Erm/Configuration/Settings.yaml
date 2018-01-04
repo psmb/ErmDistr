@@ -5,6 +5,26 @@ Neos:
       defaultLocale: ru
     http:
       baseUri: 'https://ermolaev.co/'
+    resource:
+      collections:
+        persistent:
+          storage: 's3PersistentResourcesStorage'
+          target: localWebDirectoryPersistentResourcesTarget
+      storages:
+        s3PersistentResourcesStorage:
+          storage: 'Flownative\Aws\S3\S3Storage'
+          storageOptions:
+            bucket: 'psmb-neos-resources'
+            keyPrefix: 'sites/ermolaev/'
+      targets:
+        localWebDirectoryPersistentResourcesTarget:
+          target: Neos\Flow\ResourceManagement\Target\FileSystemTarget 
+        s3PersistentResourcesTarget:
+          target: 'Flownative\Aws\S3\S3Target'
+          targetOptions:
+            bucket: 'psmb-neos-target'
+            keyPrefix: 'sites/ermolaev/'
+            baseUri: 'https://s3.eu-central-1.amazonaws.com/psmb-neos-target/sites/ermolaev/'
   Neos:
     userInterface:
       navigateComponent:
@@ -27,3 +47,13 @@ Neos:
                   locked:
                     width: 0
                     height: 0
+Flownative:
+  Aws:
+    S3:
+      profiles:
+        default:
+          credentials:
+            key: '%env:AWS_ACCESS_KEY_ID%'
+            secret: '%env:AWS_SECRET_ACCESS_KEY%'
+          region: 'eu-central-1'
+

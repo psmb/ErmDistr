@@ -27,6 +27,7 @@ web:
     - LETSENCRYPT_HOST=ermolaev.co,www.ermolaev.co
     - LETSENCRYPT_EMAIL=dimaip@gmail.com
     - IMPORT_GITHUB_PUB_KEYS=dimaip,zaveryukha
+    - PHP_TIMEZONE=Europe/Moscow
     - AWS_RESOURCES_ARN=s3://psmb-neos-resources/sites/ermolaev/
     - AWS_REGION=eu-central-1
     - AWS_ACCESS_KEY_ID

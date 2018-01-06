@@ -3,8 +3,6 @@ Neos:
   Flow:
     i18n:
       defaultLocale: ru
-    http:
-      baseUri: 'https://ermolaev.co/'
     resource:
       collections:
         persistent:
@@ -18,13 +16,7 @@ Neos:
             keyPrefix: 'sites/ermolaev/'
       targets:
         localWebDirectoryPersistentResourcesTarget:
-          target: Neos\Flow\ResourceManagement\Target\FileSystemTarget 
-        s3PersistentResourcesTarget:
-          target: 'Flownative\Aws\S3\S3Target'
-          targetOptions:
-            bucket: 'psmb-neos-target'
-            keyPrefix: 'sites/ermolaev/'
-            baseUri: 'https://s3.eu-central-1.amazonaws.com/psmb-neos-target/sites/ermolaev/'
+          target: Neos\Flow\ResourceManagement\Target\FileSystemTarget
   Neos:
     userInterface:
       navigateComponent:

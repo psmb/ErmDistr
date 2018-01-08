@@ -6,17 +6,21 @@ Neos:
     resource:
       collections:
         persistent:
-          storage: 's3PersistentResourcesStorage'
-          target: localWebDirectoryPersistentResourcesTarget
+          storage: s3PersistentResourcesStorage
+          target: s3PersistentResourcesTarget
       storages:
         s3PersistentResourcesStorage:
           storage: 'Flownative\Aws\S3\S3Storage'
           storageOptions:
             bucket: 'psmb-neos-resources'
-            keyPrefix: 'sites/ermolaev/'
+            keyPrefix: 'storage/ermolaev/'
       targets:
-        localWebDirectoryPersistentResourcesTarget:
-          target: Neos\Flow\ResourceManagement\Target\FileSystemTarget
+        s3PersistentResourcesTarget:
+          target: 'Flownative\Aws\S3\S3Target'
+          targetOptions:
+            bucket: 'psmb-neos-resources'
+            keyPrefix: 'target/ermolaev/'
+            baseUri: 'https://psmb-neos-resources.hb.bizmrg.com/target/ermolaev/'
   Neos:
     userInterface:
       navigateComponent:

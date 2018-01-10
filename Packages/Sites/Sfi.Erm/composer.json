@@ -82,6 +82,7 @@
         "typo3/neos": "*",
         "typo3/neos-nodetypes": "*",
         "sfi/grid": "*",
-        "flowpack/listable": "*"
+        "flowpack/listable": "*",
+        "flownative/aws-s3": "*"
     }
 }

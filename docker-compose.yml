@@ -11,7 +11,7 @@ db:
     MYSQL_USER: admin
     MYSQL_PASSWORD: pass
 web:
-  image: dimaip/docker-neos-alpine:latest
+  image: dimaip/ermdistr:latest
   restart: always
   ports:
     - '80'

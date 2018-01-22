@@ -18,9 +18,11 @@ services:
     secrets:
       - AWS_ACCESS_KEY_ID
       - AWS_SECRET_ACCESS_KEY
-    labels:
-      traefik.port: 80
-      traefik.frontend.rule: "Host:ermolaev.co,dev.ermolaev.co,www.ermolaev.co"
+    deploy:
+      labels:
+        - "traefik.port=80"
+        - "traefik.docker.network=main"
+        - "traefik.frontend.rule=Host:ermolaev.co,dev.ermolaev.co,www.ermolaev.co"
     ports:
       - '80'
     depends_on:

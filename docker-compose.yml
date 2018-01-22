@@ -16,13 +16,15 @@ services:
     secrets:
       - AWS_ACCESS_KEY_ID
       - AWS_SECRET_ACCESS_KEY
+    label:
+      traefik.port: 80
+      traefik.frontend.rule: "Host:ermolaev.co,dev.ermolaev.co,www.ermolaev.co"
     ports:
       - '80'
     depends_on:
       - db
       - redis
     environment:
-      - VIRTUAL_HOST=ermolaev.co,dev.ermolaev.co,next.ermolaev.co,www.ermolaev.co
       - LETSENCRYPT_HOST=ermolaev.co,www.ermolaev.co
       - LETSENCRYPT_EMAIL=dimaip@gmail.com
       - AWS_ENDPOINT=https://hb.bizmrg.com
@@ -34,3 +36,7 @@ secrets:
     external: true
   AWS_SECRET_ACCESS_KEY:
     external: true
+networks:
+  default:
+    external:
+      name: main

@@ -21,6 +21,7 @@ services:
       - AWS_SECRET_ACCESS_KEY
     deploy:
       labels:
+        - "traefik.enable=true"
         - "traefik.port=80"
         - "traefik.docker.network=main"
         - "traefik.frontend.rule=Host:ermolaev.co,dev.ermolaev.co,www.ermolaev.co"

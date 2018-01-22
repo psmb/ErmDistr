@@ -32,8 +32,6 @@ services:
       - db
       - redis
     environment:
-      - LETSENCRYPT_HOST=ermolaev.co,www.ermolaev.co
-      - LETSENCRYPT_EMAIL=dimaip@gmail.com
       - AWS_ENDPOINT=https://hb.bizmrg.com
       - AWS_BACKUP_ARN=s3://psmb-neos-resources/db/ermolaev/
 volumes:

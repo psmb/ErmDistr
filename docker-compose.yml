@@ -23,6 +23,7 @@ services:
       labels:
         - "traefik.enable=true"
         - "traefik.port=80"
+        - "traefik.default.protocol=http"
         - "traefik.docker.network=main"
         - "traefik.frontend.rule=Host:ermolaev.co,dev.ermolaev.co,www.ermolaev.co"
     ports:

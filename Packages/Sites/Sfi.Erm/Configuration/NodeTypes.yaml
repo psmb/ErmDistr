@@ -51,26 +51,28 @@
       defaultValue: '<table><tr><td>Строка прайса</td><td>100</td></tr></table>'
       ui:
         inlineEditable: true
-        aloha:
-          format:
-            b: false
-            i: false
-            u: false
-            sub: false
-            sup: false
-            p: false
-            h1: false
-            h2: false
-            h3: false
-            pre: false
-            removeFormat: true
-            table:
-              table: true
-              list:
-                ol: false
-                ul: false
-                link:
-                  a: false
+        aloha:                                                                              
+          format:                                                                           
+            strong: false                                                                   
+            em: false                                                                       
+            u: false                                                                        
+            sub: false                                                                      
+            sup: false                                                                      
+            p: true                                                                         
+            h1: false                                                                       
+            h2: false                                                                       
+            h3: false                                                                       
+            h4: false                                                                       
+            pre: false                                                                      
+            removeFormat: true                                                              
+          table:                                                                            
+            table: true                                                                     
+          list:                                                                             
+            ol: false                                                                       
+            ul: false                                                                       
+          link:                                                                             
+            a: true                                                                         
+        alignment: {  }
     doctors:
       type: references
       ui:

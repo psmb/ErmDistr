@@ -34,12 +34,12 @@ services:
         - "traefik.frontend.rule=Host:ermolaev.co,dev.ermolaev.co,www.ermolaev.co"
     ports:
       - '80'
+      - '1124:22'
     depends_on:
       - db
       - redis
     environment:
-      - AWS_ENDPOINT=https://hb.bizmrg.com
-      - AWS_BACKUP_ARN=s3://psmb-neos-resources/db/ermolaev/
+      IMPORT_GITHUB_PUB_KEYS: 'dimaip,zaveryukha'
 volumes:
   db-data:
 secrets:

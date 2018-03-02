@@ -22,7 +22,7 @@ prototype(Sfi.Erm:Service) {
 			node = ${node}
 		}
 		entryTags {
-			1 = ${'Node_' + documentNode.identifier}
+			1 = ${'Node_' + node.identifier}
 			2 = ${'NodeType_Sfi.Erm:Doctor'}
 		}
 	}

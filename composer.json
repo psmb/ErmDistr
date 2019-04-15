@@ -9,7 +9,6 @@
         "neos/neos": "^3.3",
         "neos/nodetypes": "^3.3",
         "neos/seo": "^2.0.0",
-        "neos/imagine": "^3.3",
         "neos/neos-ui": "^2",
         "sfi/grid": "^2.1",
         "flowpack/listable": "^2.0.0",

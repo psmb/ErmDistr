@@ -13,6 +13,7 @@
         "sfi/grid": "^2.1",
         "flowpack/listable": "^2.0.0",
         "flownative/aws-s3": "2.*",
+        "typo3fluid/fluid": "2.4.3",
         "yeebase/graylog": "^2.4"
     },
     "scripts": {

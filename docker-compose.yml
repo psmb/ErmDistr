@@ -16,7 +16,7 @@ services:
       - "neos"
     volumes:
       - /data/www-provisioned/Web/_Resources
-    image: dimaip/ermdistr:latest
+    image: ghcr.io/psmb/ermdistr:master
     networks:
       - default
       - main

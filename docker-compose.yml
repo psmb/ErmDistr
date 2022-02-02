@@ -14,8 +14,6 @@ services:
       MYSQL_PASSWORD: pass
   web:
     restart: always
-    labels:
-      - "neos"
     volumes:
       - /data/www-provisioned/Web/_Resources
     image: ghcr.io/psmb/ermdistr:master
@@ -25,15 +23,13 @@ services:
     environment:
       - AWS_ACCESS_KEY_ID
       - AWS_SECRET_ACCESS_KEY
-    deploy:
-      update_config:
-        order: start-first
-      labels:
-        - "traefik.enable=true"
-        - "traefik.port=80"
-        - "traefik.default.protocol=http"
-        - "traefik.docker.network=main"
-        - "traefik.frontend.rule=Host:ermolaev.co,dev.ermolaev.co,www.ermolaev.co"
+    labels:
+      - "neos"
+      - "traefik.enable=true"
+      - "traefik.port=80"
+      - "traefik.default.protocol=http"
+      - "traefik.docker.network=main"
+      - "traefik.frontend.rule=Host:ermolaev.co,dev.ermolaev.co,www.ermolaev.co"
     ports:
       - '80'
       - '1124:22'
